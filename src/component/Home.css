@@ -1,0 +1,37 @@
+.home{
+    background-color: #f1efef;
+    height: calc(100vh - 50px);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.home__container{
+    display: flex;
+    height: 80vh;
+    background-color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home__container > p{
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 20px;
+}
+
+.home__container > button{
+    border: none;
+
+}
+
+.home__container > button > a{
+    background: blue;
+    border: none;
+    color: #fff;
+    padding: 5px 7px;
+    border-radius: 8px;
+    text-decoration: none;
+
+}
