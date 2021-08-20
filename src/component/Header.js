@@ -19,8 +19,8 @@ function Header() {
                 </div>
                 <div className="header__rightSide">
                     <Link to="/checkout">
-                    <CartIcon />
-                    <span className=" header__basketCount">{cart?.length}</span>
+                    <CartIcon className="cartIcon"/>
+                    <span className="header__basketCount">{cart?.length}</span>
                     </Link>
                 </div>
  
