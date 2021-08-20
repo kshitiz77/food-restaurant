@@ -14,10 +14,15 @@ function Header() {
                         <RestaurantIcon />
                     </div>
                     <div className="header__logoName">
+                    <Link to="/">
                          <h4>Food Restaurant</h4>
+                    </Link>
                     </div>
                 </div>
                 <div className="header__rightSide">
+                    <Link to="/form">
+                    <span className="header__optionTwo">Sign Up</span>
+                    </Link>
                     <Link to="/checkout">
                     <CartIcon className="cartIcon"/>
                     <span className="header__basketCount">{cart?.length}</span>

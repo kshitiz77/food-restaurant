@@ -16,7 +16,15 @@
     margin: 20px;
 }
 
+.header__logoName > a{
+    color: #fff;
+    text-decoration: none;
+}
 
+/* .header__logoName > h1{
+    padding-left: 15px; */
+
+/* } */
 
 .header__rightSide{
     display:flex;

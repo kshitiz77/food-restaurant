@@ -1,8 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Product.css'
 import { useStateValue } from '../StateProvider'
 function Product({ id, title, price, rating, image }) {
     const [{ cart }, dispatch] = useStateValue();
+    const [displayPrice, setdisplayPrice] = useState(price);
+    // const [decrementPrice, setdecrementPrice] = useState(price);
+    const incrementCounter = () =>{
+        
+        setdisplayPrice(
+            
+           displayPrice + price
+        )
+            addToCart()
+    }
+    const decrementCounter = () =>{
+        if(displayPrice !== price){
+        setdisplayPrice(
+           displayPrice - price
+            )
+        }
+        removeFromCart()
+    }
     const addToCart = () => {
         // Add item to cart
         dispatch({
@@ -15,6 +33,7 @@ function Product({ id, title, price, rating, image }) {
             },
         });
     };
+    
     const removeFromCart = () =>{
         dispatch({
             type:"Remove_From_Cart",
@@ -29,12 +48,12 @@ function Product({ id, title, price, rating, image }) {
                     <p>{title}</p>
                     <p className="product__price">
                         <small>₹</small>
-                        <strong>{price}</strong>
+                        <strong>{displayPrice}</strong>
                     </p>
                 </div>
                 <div className="product__button">
-                <button onClick={addToCart}>+</button>
-                <button onClick={removeFromCart}>-</button>
+                <button onClick={addToCart}  onClick={incrementCounter}>+</button>
+                <button onClick={removeFromCart} onClick={decrementCounter}>-</button>
                 </div>
             </div>
         </div>
